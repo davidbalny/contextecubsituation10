@@ -1,7 +1,7 @@
 ﻿#====================================================================
 # NOM : ExerciceAD4.ps1
 # AUTEUR : David Balny
-# DATE : 07/12/2019
+# DATE : 07/12/2023
 # 
 # VERSION 1.0
 # COMMENTAIRE : script permettant l'importation d'utilisateur

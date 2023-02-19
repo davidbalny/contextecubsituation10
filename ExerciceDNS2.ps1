@@ -1,7 +1,7 @@
 ﻿#===========================================================================================
 # NOM : ExerciceDNS2.ps1
 # AUTEUR : David Balny
-# DATE : 07/12/2019
+# DATE : 07/12/2023
 # 
 # VERSION 1.0
 # COMMENTAIRE : script permettant de créer un nouvel enregistrement (A ou CNAME) dans le DNS
@@ -25,7 +25,7 @@ if ($choix -eq "A")
     else
     {
     $nomHoteVise=[Microsoft.VisualBasic.Interaction]::InputBox("Entrez le nom FQDN de l'hôte visé","Saisie du nom de l'hôte visé")
-    try{Add-DnsServerResourceRecordCName -Name $nomHote -HostNameAlias $nomHoteVise -ZoneName "cyres.lan"}
+    try{Add-DnsServerResourceRecordCName -Name $nomHote -HostNameAlias $nomHoteVise -ZoneName "local.hongkong.cub.sioplc.fr"}
     catch{"échec de la création de l'alias";break}
     }
 #Affichage d'un mesage indiquant la réussite de l'enregistrement

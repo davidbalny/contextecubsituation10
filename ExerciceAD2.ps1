@@ -1,7 +1,7 @@
 ﻿#==================================================================
 # NOM : ExerciceAD2.ps1
 # AUTEUR : David Balny
-# DATE : 07/12/2019
+# DATE : 07/12/2023
 # 
 # VERSION 1.0
 # COMMENTAIRE : script permettant de créer un utilisateur
@@ -14,7 +14,7 @@
 $PrenomUtilisateur=[Microsoft.VisualBasic.Interaction]::InputBox("Entrez le prénom de l'utilisateur","Saisie du prénom de l'utilisateur")
 $NomUtilisateur=[Microsoft.VisualBasic.Interaction]::InputBox("Entrez le nom de l'utilisateur","Saisie du nom de l'utilisateur")
 $SamCompte=$PrenomUtilisateur+"."+$NomUtilisateur
-$NomUtilisateurDansDomaine=$SamCompte+"@cyres.lan"
+$NomUtilisateurDansDomaine=$SamCompte+"@local.hongkong.cub.sioplc.fr"
 $NomSurAd=$PrenomUtilisateur+" "+$NomUtilisateur
 
 #Enregistrement de l'utilisateur

@@ -1,7 +1,7 @@
 ﻿#==================================================================
 # NOM : ExerciceAD1.ps1
 # AUTEUR : David Balny
-# DATE : 07/12/2019
+# DATE : 07/12/2023
 # 
 # VERSION 1.0
 # COMMENTAIRE : script permettant de créer une unité d'organisation
@@ -17,12 +17,12 @@ $conteneur=[Microsoft.VisualBasic.Interaction]::InputBox("Entrez le nom du conte
 #Création de la nouvelle UO
 if ($conteneur -eq "")
     {
-    try{New-ADOrganizationalUnit -Name "$nomOU" -Path "DC=cyres,DC=lan"}
+    try{New-ADOrganizationalUnit -Name "$nomOU" -Path "DC=local,DC=hongkong,DC=cub,DC=sioplc,DC=fr"}
     catch{"échec de la création de votre UO sans conteneur parent";break}
     }
     else
     {
-    try{New-ADOrganizationalUnit -Name "$nomOU" -Path "OU=$conteneur,DC=cyres,DC=lan"}
+    try{New-ADOrganizationalUnit -Name "$nomOU" -Path "OU=$conteneur,DC=local,DC=hongkong,DC=cub,DC=sioplc,DC=fr"}
     catch{"échec de la création de votre UO avec le conteneur parent : $conteneur";break}
     }
 #Affichage d'un mesage indiquant la réussite de la création de l'UO

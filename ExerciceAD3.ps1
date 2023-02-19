@@ -1,7 +1,7 @@
 ﻿#====================================================================
 # NOM : ExerciceAD3.ps1
 # AUTEUR : David Balny
-# DATE : 07/12/2019
+# DATE : 07/12/2023
 # 
 # VERSION 1.0
 # COMMENTAIRE : script permettant de créer un utilisateur dans une UO
@@ -15,7 +15,7 @@ $PrenomUtilisateur=[Microsoft.VisualBasic.Interaction]::InputBox("Entrez le pré
 $NomUtilisateur=[Microsoft.VisualBasic.Interaction]::InputBox("Entrez le nom de l'utilisateur","Saisie du nom de l'utilisateur")
 $conteneur=[Microsoft.VisualBasic.Interaction]::InputBox("Entrez le nom du conteneur parent de l'utilisateur (laisser vide si aucun conteneur parent)","Saisie du conteneur parent de l'utilisateur")
 $SamCompte=$PrenomUtilisateur+"."+$NomUtilisateur
-$NomUtilisateurDansDomaine=$SamCompte+"@cyres.lan"
+$NomUtilisateurDansDomaine=$SamCompte+"@local.hongkong.cub.sioplc.fr"
 $NomSurAd=$PrenomUtilisateur+" "+$NomUtilisateur
 
 #Création de la nouvelle UO
@@ -27,7 +27,7 @@ if ($conteneur -eq "")
     else
     {
     try{New-ADUser -SamAccountName $SamCompte -UserPrincipalName $NomUtilisateurDansDomaine -GivenName $PrenomUtilisateur -Surname $NomUtilisateur -Name $NomSurAd
-    Move-ADObject -Identity "CN=$NomSurAd,CN=Users,DC=cyres,DC=lan" -TargetPath "OU=$conteneur,DC=cyres,DC=lan"
+    Move-ADObject -Identity "CN=$NomSurAd,CN=Users,DC=local,DC=hongkong,DC=cub,DC=sioplc,DC=fr" -TargetPath "OU=$conteneur,DC=local,DC=hongkong,DC=cub,DC=sioplc,DC=fr"
     }
     catch{"Création impossible";break}
     }
